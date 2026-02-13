@@ -93,12 +93,14 @@ const Index = () => {
         </h1>
 
         {teaseMsg && (
-          <p className="text-lg text-primary font-semibold mt-2 mb-6 animate-[fade-in_0.3s_ease-out]"
-            style={{ fontFamily: "'Quicksand', sans-serif" }}>
-            {teaseMsg}
-          </p>
+          <div className="mt-4 mb-6 animate-[scale-in_0.3s_ease-out] bg-white/60 backdrop-blur-sm rounded-2xl px-6 py-3 shadow-lg border border-pink-200">
+            <p className="text-xl md:text-2xl text-primary font-bold"
+              style={{ fontFamily: "'Dancing Script', cursive" }}>
+              {teaseMsg}
+            </p>
+          </div>
         )}
-        {!teaseMsg && <div className="h-10" />}
+        {!teaseMsg && <div className="h-16" />}
 
         <div className="flex gap-6 justify-center items-center mt-4">
           <button
