@@ -48,7 +48,7 @@ const Index = () => {
             style={{ fontFamily: "'Quicksand', sans-serif" }}>
             You just made me the happiest person in the world! 💕🥰
           </p>
-          <p className="mt-6 text-lg text-white/70">Happy Valentine's Day, my love ❤️</p>
+          <p className="mt-6 text-lg text-white/70">Happy Valentine's Day, Varun ❤️</p>
         </div>
       </div>
     );
