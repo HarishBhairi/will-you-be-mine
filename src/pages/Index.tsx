@@ -89,7 +89,7 @@ const Index = () => {
         <div className="text-6xl mb-6 heartbeat">💕</div>
         <h1 className="text-3xl md:text-5xl font-bold text-primary mb-2"
           style={{ fontFamily: "'Dancing Script', cursive" }}>
-          Will you be my Valentine?
+          Will you be my Valentine Varun?
         </h1>
 
         {teaseMsg && (
