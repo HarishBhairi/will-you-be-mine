@@ -161,3 +161,31 @@
 .pulse-glow {
   animation: pulse-glow 2s ease-in-out infinite;
 }
+
+/* Balloon pop */
+@keyframes balloon-pop {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.5; }
+  100% { transform: scale(0); opacity: 0; }
+}
+
+.balloon-pop {
+  animation: balloon-pop 0.4s ease-out forwards;
+}
+
+/* Polaroid reveal */
+@keyframes polaroid-in {
+  0% { transform: scale(0) rotate(10deg); opacity: 0; }
+  60% { transform: scale(1.1) rotate(-3deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+.polaroid-reveal {
+  animation: polaroid-in 0.5s ease-out forwards;
+}
+
+/* Letter fade in */
+@keyframes letter-fade-in {
+  0% { opacity: 0; transform: translateY(30px) scale(0.95); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
