@@ -1,52 +1,55 @@
 
 
-# 💝 "Will You Be My Valentine?" Interactive Website
+# Balloon Celebration Phase Redesign
 
-## Overview
-A romantic, playful Valentine's-themed website that asks "Will you be my Valentine?" with two buttons — **Yes** and **No**. The **No** button is impossible to click (it runs away!), and clicking **Yes** triggers a celebration.
+## What Changes
 
-## Page Flow
+Replace the current "Yay!" celebration screen with a two-step interactive experience:
 
-### 1. Landing / Hero Section
-- Beautiful Valentine's theme with floating hearts animation in the background
-- Soft pink/red gradient background with subtle sparkle effects
-- A cute headline like *"Hey, I have something to ask you..."*
-- A heart or love-themed illustration/emoji centerpiece
-- Smooth scroll or button to reveal the question
+### Step 1: Balloon Pop Phase
+- 6 colorful balloons arranged in a **pyramid layout** (1 on top, 2 in middle, 3 on bottom)
+- Each balloon has a different color (red, pink, gold, purple, coral, magenta)
+- Clicking a balloon triggers a "pop" animation (scale up + fade out)
+- After popping, a **polaroid-style photo card** appears with a romantic tagline beneath it
+- A counter shows progress ("3/6 balloons popped!")
+- Confetti and floating hearts remain in the background
 
-### 2. The Big Question
-- Large, romantic text: **"Will you be my Valentine? 💕"**
-- Two buttons: **"Yes! 💖"** and **"No 😢"**
+### Step 2: Valentine Letter (after all 6 popped)
+- Once all balloons are popped, transition to a beautiful hero section
+- A romantic Valentine's letter addressed to Varun with soft shadows and elegant styling
+- Heartfelt message written in cursive typography
 
-### 3. The Mischievous "No" Button
-- Every time the user tries to hover or click "No", the button **jumps to a random position** on the screen
-- Each failed attempt shows a **teasing message**, cycling through lines like:
-  - "Are you sure? 🥺"
-  - "Think again... 💔"
-  - "You're breaking my heart!"
-  - "That's not the right answer!"
-  - "Try again, cutie 😏"
-  - "Nope, not an option!"
-  - "My heart can't take this!"
-- The "Yes" button **grows slightly bigger** with each failed "No" attempt, making it even more obvious 😄
-- The "No" button gets **smaller** each time it escapes
+### Pyramid Layout
+```text
+        [ B1 ]
+      [ B2 ][ B3 ]
+    [ B4 ][ B5 ][ B6 ]
+```
 
-### 4. The "Yes" Celebration 🎉
-- Clicking **Yes** triggers:
-  - A **confetti/party popper animation** filling the screen
-  - Floating hearts explosion
-  - A sweet message appears: *"Yay! You just made me the happiest person in the world! 💕🥰"*
-  - Background changes to a warm, glowing romantic theme
-  - Maybe a cute animated heart beating effect
+### Photos & Taglines
+Each balloon reveals one of the 6 uploaded photos as a polaroid with taglines like:
+1. "Every moment with you is magic"
+2. "Beach days & forever smiles"
+3. "You + Me = Perfect"
+4. "Adventures with my favorite person"
+5. "My happy place is next to you"
+6. "Together is my favorite place to be"
 
-## Design & Theme
-- **Color palette**: Soft pinks, reds, and whites with gold accents
-- **Typography**: Playful, romantic fonts (using Google Fonts)
-- **Animations**: Floating hearts, gentle pulse effects, smooth transitions
-- **Mobile responsive**: Works beautifully on phones (likely how the valentine will open it!)
+## Technical Details
 
-## Technical Notes
-- Pure frontend — no backend needed
-- Custom CSS animations for floating hearts and confetti
-- Fun, lightweight, and fast-loading
+### Files to Create
+- **src/components/BalloonCelebration.tsx** -- Main component managing balloon state, pyramid grid, pop logic, polaroid reveals, and the final letter
+- Copy all 6 uploaded images to **src/assets/** (image1-6.jpeg)
+
+### Files to Modify
+- **src/pages/Index.tsx** -- Replace the current celebration phase render with the new `BalloonCelebration` component
+- **src/index.css** -- Add CSS animations for balloon pop, polaroid reveal, and letter fade-in
+
+### Key Implementation Details
+- State: array of 6 balloon objects tracking `popped` status
+- Pyramid achieved with CSS grid or flex rows (row 1: 1 item centered, row 2: 2 items centered, row 3: 3 items)
+- Balloon pop: scale(1.3) + opacity(0) transition, then swap to polaroid card
+- Polaroid style: white border, slight rotation, drop shadow, photo inside, tagline below
+- After all 6 popped: smooth transition to the Valentine letter hero section
+- Letter section: large card with romantic gradient border, shadow, cursive font
 
