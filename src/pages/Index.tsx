@@ -1,6 +1,7 @@
 import { useState, useCallback } from "react";
 import FloatingHearts from "@/components/FloatingHearts";
 import Confetti from "@/components/Confetti";
+import BalloonCelebration from "@/components/BalloonCelebration";
 
 const TEASE_MESSAGES = [
   "Are you sure? 🥺",
@@ -33,25 +34,7 @@ const Index = () => {
   const noScale = Math.max(1 - noAttempts * 0.06, 0.4);
 
   if (phase === "celebration") {
-    return (
-      <div className="fixed inset-0 flex items-center justify-center overflow-hidden"
-        style={{ background: "linear-gradient(135deg, hsl(340 80% 55%), hsl(330 70% 65%), hsl(350 90% 70%))" }}>
-        <Confetti />
-        <FloatingHearts count={30} />
-        <div className="relative z-10 text-center px-6 animate-[scale-in_0.6s_ease-out]">
-          <div className="text-8xl mb-6 heartbeat">💖</div>
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4"
-            style={{ fontFamily: "'Dancing Script', cursive" }}>
-            Yay! 🎉
-          </h1>
-          <p className="text-xl md:text-2xl text-white/90 max-w-lg mx-auto leading-relaxed"
-            style={{ fontFamily: "'Quicksand', sans-serif" }}>
-            You just made me the happiest person in the world! 💕🥰
-          </p>
-          <p className="mt-6 text-lg text-white/70">Happy Valentine's Day, Varun ❤️</p>
-        </div>
-      </div>
-    );
+    return <BalloonCelebration />;
   }
 
   if (phase === "landing") {
